@@ -1,7 +1,7 @@
 #!/bin/bash
-a=5
-b=7
+a=10
+b=4
 echo "addition od $a and $b : "$(( a + b ))
 echo "Multiplication of $a and $b : "$(( a * b ))
-echo "Division of $a and $b : "$(( b / a ))
-echo "Modulo of $a and $b : "$(( b % a ))
+echo "Division of $a and $b : "$(( a / b ))
+echo "Modulo of $a and $b : "$(( a % b ))
