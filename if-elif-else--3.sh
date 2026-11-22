@@ -87,13 +87,13 @@
 #fi 
 
 #10.Monitor server CPU utilization
-cpu_usage=92
-if [ "$cpu_usage" -ge 90 ];
-then
-     echo "CRITICAL: CPU usage is very high"
-elif [ "$cpu_usage" -ge 70 ];
-then
-     echo "WARNING: CPU usage is high"
-else
-     echo "OK: CPU usage is normal"
-fi 
+#cpu_usage=92
+#if [ "$cpu_usage" -ge 90 ];
+#then
+#     echo "CRITICAL: CPU usage is very high"
+#elif [ "$cpu_usage" -ge 70 ];
+#then
+#     echo "WARNING: CPU usage is high"
+#else
+#     echo "OK: CPU usage is normal"
+#fi 
