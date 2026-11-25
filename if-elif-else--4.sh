@@ -102,4 +102,25 @@
 #else
 #    echo "WARNING: Apache service status is $service_status and process count is $process_count"
 #fi
-#10.
+
+#10. disk usage, Apache service status, and Apache process count.
+#disk_usage=$(df -h / | awk 'NR==2 {gsub("%", "", $5); print $5}')
+#process_name="apache2"
+#service_status=$(systemctl is-active "$process_name")
+#process_count=$(pgrep -c "$process_name")
+#process_count=${process_count:-0} (Add it after the pgrep command. This helps if the variable is empty.)
+#if [ "$disk_usage" -ge 85 ];
+#then 
+#    echo "WARNING: Disk usage is high"
+#elif [ "$service_status" = "active" ] && [ "$process_count" -gt 0  ];
+#then
+#     echo "OK: Apache is running"	
+#elif [ "$service_status" = "inactive" ] && [ "$process_count" -eq 0 ];
+#then
+#     echo "ALERT: Apache is stopped"	
+#else
+#    echo "WARNING: Server health needs investigation"
+#fi 
+
+  	
+
