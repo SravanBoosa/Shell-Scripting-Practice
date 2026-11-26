@@ -32,4 +32,77 @@
 #-s --  File exists and size is greater than zero
 #! -s -- File is empty or does not satisfy the size test
 #Remember: -s checks file size, not whether the contents form a valid TAR archive
-#3.
+
+
+#3.You are a Linux administrator troubleshooting an application. You need to search an application log file and check whether it contains any ERROR messages.
+# *************** if -nested if-else statements ***************
+##grep -q searches silently for the text ERROR.
+#grep returns an exit status of 0 when a match is found, and a non-zero status when no match is found.
+
+#log_file=/home/sravan/application.log
+#if [ -f "$log_file" ]; 
+#then 
+#    echo "log file exists"	
+#    if  grep -q "ERROR" "$log_file";  
+#    then 
+#         echo "ALERT: Error messages found in application log"
+#    else
+#    	 echo "OK: No error messages found"	
+#    fi	 
+#else 
+#     echo "ERROR: Log file not found"
+#fi     
+
+#4.Log analysis using tail and wc
+
+LOG_FILE="/home/sravan/application.log"
+
+if [ -f "$LOG_FILE" ]; 
+then
+
+    COUNT=$(wc -l < "$LOG_FILE")  #Counts the number of lines.
+
+    if [ "$COUNT" -gt 50 ]; 
+    then
+        echo "WARNING: Application log contains more than 50 lines"
+
+    elif [ "$COUNT" -le 50 ]; 
+    then
+        echo "OK: Application log size is within expected limits"
+
+    fi
+
+else
+    echo "ERROR: Log file not found"
+
+fi
+
+
+     	     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
